@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/rps.iml" filepath="$PROJECT_DIR$/rps.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rps-javafx.iml" filepath="$PROJECT_DIR$/rps-javafx.iml" />
     </modules>
   </component>
 </project>
