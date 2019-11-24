@@ -39,7 +39,7 @@ public class RpsController {
 
   private static final String GENERATION_FORMAT_KEY = "generation_format";
   private static final byte NUM_BREEDS = 5;
-  private static final int ARENA_SIZE = 100;
+  private static final int ARENA_SIZE = 50;
   private static final int ITERATIONS_PER_SLEEP = ARENA_SIZE * ARENA_SIZE / 50;
   private static final int SLEEP_INTERVAL = 1;
 

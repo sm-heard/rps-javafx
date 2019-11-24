@@ -64,7 +64,6 @@ public class Main extends Application {
     Scene scene = new Scene(root);
     stage.setTitle(bundle.getString(WINDOW_TITLE_KEY));
     stage.getIcons().add(new Image(classLoader.getResourceAsStream(ICON_RESOURCE)));
-    stage.setResizable(false);
     stage.setResizable(true);
     stage.setScene(scene);
     stage.sizeToScene();
@@ -75,8 +74,6 @@ public class Main extends Application {
   /**
    * Terminates RPS ecosystem simulation thread managed by {@link RpsController}, then invokes
    * standard JavaFX shutdown processing.
-   *
-   * @throws Exception
    */
   @Override
   public void stop() throws Exception {
@@ -86,8 +83,6 @@ public class Main extends Application {
 
   private void setStageSize(Stage stage, Parent root) {
     Bounds bounds = root.getLayoutBounds();
-    stage.setMaxWidth(stage.getWidth());
-    stage.setMaxHeight(stage.getHeight());
     stage.setMinWidth(root.minWidth(-1) + stage.getWidth() - bounds.getWidth());
     stage.setMinHeight(root.minHeight(-1) + stage.getHeight() - bounds.getHeight());
   }

@@ -17,14 +17,13 @@
 
 <?import edu.cnm.deepdive.rps.view.TerrainView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.Label?>
 <VBox
   xmlns="http://javafx.com/javafx"
   xmlns:fx="http://javafx.com/fxml"
