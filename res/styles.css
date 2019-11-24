@@ -1,7 +1,11 @@
-GridPane {
+VBox {
   -fx-padding: 10px;
-  -fx-hgap: 5px;
-  -fx-vgap: 5px;
+}
+
+HBox {
+  -fx-spacing: 10px;
+  -fx-padding: 0 0 10px 0;
+  -fx-alignment: center-left;
 }
 
 Pane {
@@ -12,11 +16,29 @@ Pane {
   -fx-pref-height: 720px;
 }
 
-Button, ToggleButton {
+Label {
+  -fx-font-size: 12pt;
   -fx-font-weight: bold;
-  -fx-pref-width: 80px;
 }
 
-Text {
-  -fx-font-weight: bold;
+Button, ToggleButton {
+  -fx-pref-width: 25px;
+  -fx-pref-height: 25px;
+  -fx-min-width: 25px;
+  -fx-min-height: 25px;
+  -fx-background-position: center center;
+  -fx-background-size: auto 65%;
+  -fx-background-repeat: no-repeat;
+}
+
+Button#reset {
+  -fx-background-image: url('reset.png');
+}
+
+ToggleButton#toggleRun {
+  -fx-background-image: url('play.png');
+}
+
+ToggleButton#toggleRun:selected {
+  -fx-background-image: url('pause.png');
 }

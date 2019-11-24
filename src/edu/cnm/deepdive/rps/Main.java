@@ -35,7 +35,7 @@ public class Main extends Application {
   private static final String LAYOUT_RESOURCE = "rps.fxml";
   private static final String RESOURCE_BUNDLE = "strings";
   private static final String WINDOW_TITLE_KEY = "window_title";
-  private static final String ICON_RESOURCE = "app-icon-72.png";
+  private static final String ICON_RESOURCE = "icon.png";
 
   private RpsController controller;
 

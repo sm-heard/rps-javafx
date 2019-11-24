@@ -24,6 +24,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.text.Text;
 
@@ -36,8 +37,6 @@ import javafx.scene.text.Text;
  */
 public class RpsController {
 
-  private static final String STOP_TEXT_KEY = "stop_text";
-  private static final String START_TEXT_KEY = "start_text";
   private static final String GENERATION_FORMAT_KEY = "generation_format";
   private static final byte NUM_BREEDS = 5;
   private static final int ARENA_SIZE = 100;
@@ -48,9 +47,9 @@ public class RpsController {
   @FXML private ToggleButton toggleRun;
   @FXML private TerrainView terrainView;
   @FXML private ResourceBundle resources;
-  @FXML private Text generation;
+  @FXML private Label generation;
   private Arena arena;
-  private ViewUpdater updater;
+  private Updater updater;
   private boolean running;
   private String generationFormat;
 
@@ -61,7 +60,7 @@ public class RpsController {
         .setArenaSize(ARENA_SIZE)
         .build();
     terrainView.setArena(arena);
-    updater = new ViewUpdater();
+    updater = new Updater();
     generationFormat = resources.getString(GENERATION_FORMAT_KEY);
     reset(null);
   }
@@ -95,7 +94,7 @@ public class RpsController {
   private void start() {
     running = true;
     updateControls();
-    new ModelRunner().start();
+    new Runner().start();
     updater.start();
   }
 
@@ -107,10 +106,8 @@ public class RpsController {
   private void updateControls() {
     if (running) {
       reset.setDisable(true);
-      toggleRun.setText(resources.getString(STOP_TEXT_KEY));
     } else {
       reset.setDisable(false);
-      toggleRun.setText(resources.getString(START_TEXT_KEY));
       if (toggleRun.isSelected()) {
         toggleRun.setSelected(false);
       }
@@ -118,7 +115,7 @@ public class RpsController {
     }
   }
 
-  private class ModelRunner extends Thread {
+  private class Runner extends Thread {
 
     @Override
     public void run() {
@@ -138,7 +135,7 @@ public class RpsController {
 
   }
 
-  private class ViewUpdater extends AnimationTimer {
+  private class Updater extends AnimationTimer {
 
     @Override
     public void handle(long now) {
